@@ -27,5 +27,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file ./simple-ecommerce/pom.xml
+    - name: Execute Jar file
+      run: sudo kill -9 `sudo lsof -t -i:8080` &  sudo java -jar /home/ubuntu/actions-runner/_work/aws-ecoomerce-1/aws-ecoomerce-1/simple-ecommerce/target/simple-ecommerce-0.0.1-SNAPSHOT.jar &  
 
    
